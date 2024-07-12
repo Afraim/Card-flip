@@ -1,0 +1,39 @@
+.memory-game {
+  display: flex;
+  flex-wrap: wrap;
+  width: 640px;
+  margin: 20px auto;
+}
+
+.card {
+  width: 100px;
+  height: 100px;
+  margin: 10px;
+  perspective: 1000px;
+}
+
+.front-face,
+.back-face {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  backface-visibility: hidden;
+  transition: ease-in-out 2s;
+}
+
+.front-face {
+  transform: rotateY(180deg);
+}
+
+.card.flip .front-face {
+  transform: rotateY(0deg);
+}
+
+.card.flip .back-face {
+  transform: rotateY(-180deg);
+}
+
+.card.match {
+  transition: ease-in-out 1s;
+  transform: scale(0);
+}
